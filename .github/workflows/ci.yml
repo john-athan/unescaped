@@ -1,0 +1,27 @@
+name: CI
+
+# A caller, never a container. Every check this runs is a script in this
+# repository, so the same checks run on the machine the code was written on,
+# before a push, with `oss check unescaped`. Logic that lives only in a workflow
+# file can only ever run after a push, somewhere else, which is the slowest
+# possible place to learn that a file is missing.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Validate
+        run: tools/validate.sh
