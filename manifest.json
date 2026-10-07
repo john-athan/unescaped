@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Drive HTML Render",
+  "version": "0.1",
+  "description": "Render the HTML file open in Google Drive as a web page.",
+  "permissions": ["scripting"],
+  "host_permissions": ["https://drive.google.com/*", "https://drive.usercontent.google.com/*"],
+  "background": { "service_worker": "bg.js" },
+  "action": { "default_title": "Render HTML (Alt+Shift+H)" },
+  "commands": { "_execute_action": { "suggested_key": { "default": "Alt+Shift+H" } } },
+  "sandbox": { "pages": ["sandbox.html"] }
+}
