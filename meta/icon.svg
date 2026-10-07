@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Unescaped">
+  <title>Unescaped</title>
+  <rect width="128" height="128" rx="28" fill="#0f5c55"/>
+  <g fill="none" stroke="#f5f3ee" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="29,42 13,64 29,86"/>
+    <polyline points="99,42 115,64 99,86"/>
+  </g>
+  <clipPath id="page"><rect x="39" y="28" width="50" height="72" rx="7"/></clipPath>
+  <g clip-path="url(#page)">
+    <rect x="39" y="28" width="50" height="72" fill="#f5f3ee"/>
+    <rect x="39" y="28" width="50" height="15" fill="#ffb547"/>
+    <g fill="#b9c7c2">
+      <rect x="47" y="52" width="34" height="5" rx="2.5"/>
+      <rect x="47" y="63" width="34" height="5" rx="2.5"/>
+      <rect x="47" y="74" width="22" height="5" rx="2.5"/>
+      <rect x="47" y="85" width="28" height="5" rx="2.5"/>
+    </g>
+  </g>
+</svg>
