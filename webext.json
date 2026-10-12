@@ -1,0 +1,16 @@
+{
+  "zip": "unescaped-{version}.zip",
+  "files": ["manifest.json", "background.js", "sources.js", "viewer.html", "viewer.js", "sandbox.html", "sandbox.js", "icons", "LICENSE"],
+  "hosts": ["https://drive.google.com/*", "https://drive.usercontent.google.com/*"],
+  "allow": { "network": ["viewer.js"], "html": ["sandbox.js"] },
+  "urls": ["^https://drive\\.google\\.com/"],
+  "assets": { "screenshots/store-icon.png": [128, 128], "screenshots/store-1.png": [1280, 800] },
+  "storeIcon": "screenshots/store-icon.png",
+  "justify": {
+    "file": "meta/store-listing.md",
+    "after": "## Permission justifications",
+    "until": "\n## ",
+    "name": "^\\*\\*([a-zA-Z]+)\\*\\*$",
+    "hostAs": "Host"
+  }
+}
