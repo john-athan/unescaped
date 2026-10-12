@@ -1,7 +1,7 @@
 # Chrome Web Store: listing copy and submission answers
 
 Everything the dashboard asks for, written out, so that submission is a paste
-job. Screenshots and promo tiles do not exist yet; they need real captures.
+job. Promo tiles do not exist yet; the store does not require them.
 
 ---
 
@@ -132,5 +132,5 @@ Privacy policy URL: https://john-athan.github.io/unescaped/privacy-policy.html
 | Asset | Size | File |
 |---|---|---|
 | Store icon | 128 x 128 | `screenshots/store-icon.png` |
-| Screenshots | 1280 x 800 | not made yet |
+| Screenshots | 1280 x 800 | `screenshots/store-1.png`, from `meta/shot-1.html` (`tools/render-assets.sh shots`) |
 | Small promo tile | 440 x 280 | not made yet |

@@ -7,6 +7,7 @@
 #
 #   tools/render-assets.sh            # everything
 #   tools/render-assets.sh icons      # just icons/
+#   tools/render-assets.sh shots      # just the store screenshots
 #   tools/render-assets.sh store-icon # just the padded 128 store icon
 set -euo pipefail
 
@@ -74,9 +75,19 @@ do_store_icon() {
 
 
 
+do_shots() {
+  mkdir -p "$ROOT/screenshots"
+  for n in 1 2 3; do
+    [ -f "$ROOT/meta/shot-$n.html" ] || continue
+    shoot "$ROOT/meta/shot-$n.html" "$ROOT/screenshots/store-$n.png" 1280 800 --opaque
+  done
+  echo "shots: $(cd "$ROOT/screenshots" && ls store-[0-9].png 2>/dev/null | tr '\n' ' ')"
+}
+
 case "${1:-all}" in
   icons) do_icons ;;
   store-icon) do_store_icon ;;
-  all) do_icons; do_store_icon ;;
-  *) echo "usage: $0 [all|icons|store-icon]" >&2; exit 2 ;;
+  shots) do_shots ;;
+  all) do_icons; do_store_icon; do_shots ;;
+  *) echo "usage: $0 [all|icons|store-icon|shots]" >&2; exit 2 ;;
 esac

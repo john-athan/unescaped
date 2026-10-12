@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<!-- Store screenshot 1, 1280x800. Both images are real captures: the same file
+     served as text/plain, before and after one click on the toolbar button. -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    width:1280px;height:800px;overflow:hidden;background:#0b2724;
+    background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);
+    background-size:26px 26px,26px 26px;
+    color:#f5f3ee;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    padding:46px 64px;display:flex;flex-direction:column;gap:26px;
+  }
+  h2{font-size:34px;font-weight:600;line-height:1.25}
+  h2 em{font-style:normal;color:#ffb547}
+  .sub{font-size:14px;color:#b9c7c2;margin-top:10px}
+  .cols{display:flex;align-items:flex-start;justify-content:space-between}
+  .col{width:480px;display:flex;flex-direction:column;gap:12px}
+  .tag{font-size:11px;letter-spacing:.14em;color:#b9c7c2}
+  .tag b{display:block;color:#f5f3ee;font-size:14px;letter-spacing:.02em;margin-top:5px;font-weight:600}
+  .tag.hot b{color:#ffb547}
+  .frame{width:480px;height:548px;border:1px solid #1d4a45;border-radius:8px;overflow:hidden;background:#fff}
+  .frame img{display:block;width:100%}
+  .mid{flex:1;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding-top:40px}
+  .mid svg{display:block}
+  .mid span{font-size:11px;letter-spacing:.12em;color:#ffb547;text-align:center;line-height:1.6}
+  .mid kbd{font:inherit;color:#f5f3ee;border:1px solid #1d4a45;border-radius:4px;padding:2px 6px}
+</style></head>
+<body>
+  <div>
+    <h2>HTML source, <em>read as the page</em> it describes.</h2>
+    <div class="sub">A raw file, a selection, or an HTML file in Google Drive.</div>
+  </div>
+  <div class="cols">
+    <div class="col">
+      <div class="tag">THE FILE<b>Served as text/plain</b></div>
+      <div class="frame"><img src="sample-raw.png" alt=""></div>
+    </div>
+    <div class="mid">
+      <svg width="120" height="24" viewBox="0 0 120 24" fill="none" stroke="#ffb547" stroke-width="2">
+        <path d="M2 12H114M104 3l10 9-10 9"/>
+      </svg>
+      <span>ONE CLICK<br>OR <kbd>ALT+SHIFT+H</kbd></span>
+    </div>
+    <div class="col">
+      <div class="tag hot">UNESCAPED<b>The page, in a new tab</b></div>
+      <div class="frame"><img src="sample-rendered.png" alt=""></div>
+    </div>
+  </div>
+</body></html>
