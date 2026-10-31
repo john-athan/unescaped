@@ -5,6 +5,8 @@ versions follow Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-31
+
 ### Fixed
 - Self-contained "standalone" bundles render. They unpack their scripts and
   frames into `blob:` URLs, which the default sandbox policy blocked, so the

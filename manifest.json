@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Unescaped - Render HTML Source as a Page",
   "short_name": "Unescaped",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Opens HTML source as a working page in a new tab: a selection, a raw .html file, or an HTML file in Google Drive.",
   "homepage_url": "https://github.com/john-athan/unescaped",
   "minimum_chrome_version": "116",
