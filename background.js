@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(() => {
 
 chrome.action.onClicked.addListener((tab) => render(tab, false));
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId === MENU) render(tab, true);
+  if (info.menuItemId === MENU) render(tab, true, info);
 });
 chrome.tabs.onRemoved.addListener((tabId) => chrome.storage.session.remove(docKey(tabId)));
 
@@ -30,12 +30,20 @@ function readPage() {
   };
 }
 
-async function render(tab, selectionOnly) {
+// info: the context menu's, when the click came from there. The selection may
+// sit in a frame (a Gmail or Chat attachment preview), so read that frame.
+async function render(tab, selectionOnly, info) {
   await chrome.action.setBadgeText({ tabId: tab.id, text: '' });
   let page = {};
   try {
-    [{ result: page }] = await chrome.scripting.executeScript({ target: { tabId: tab.id }, func: readPage });
-  } catch {} // chrome:// pages, the store, file:// without file access
+    [{ result: page }] = await chrome.scripting.executeScript({
+      target: { tabId: tab.id, frameIds: [info?.frameId ?? 0] },
+      func: readPage,
+    });
+  } catch {} // chrome:// pages, the store, file:// without file access, a frame from another origin
+  // Chrome's copy of the selection is the fallback: it may lose line breaks,
+  // which can break a script that uses // comments.
+  if (!page.selection && info?.selectionText) page.selection = info.selectionText;
   const doc = pickSource({ ...page, url: tab.url }, { selectionOnly });
   if (!doc) return chrome.action.setBadgeText({ tabId: tab.id, text: '?' });
 

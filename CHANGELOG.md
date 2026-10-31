@@ -5,6 +5,13 @@ versions follow Semantic Versioning.
 
 ## [Unreleased]
 
+### Fixed
+- Self-contained "standalone" bundles render. They unpack their scripts and
+  frames into `blob:` URLs, which the default sandbox policy blocked, so the
+  page stayed a template.
+- "Render selection as HTML" works when the selection is in a frame, such as
+  the attachment preview in Gmail or Google Chat.
+
 ## [0.1.0] - 2026-10-07
 
 ### Added
