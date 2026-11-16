@@ -5,6 +5,11 @@ versions follow Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-16
+
+### Changed
+- New icon: the rendered page running for the exit
+
 ## [0.1.1] - 2026-10-31
 
 ### Fixed
