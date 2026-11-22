@@ -1,13 +1,11 @@
 // Which source a click picks. The part that can go wrong while looking like it
 // worked: render the wrong thing, or nothing, on a page that had HTML on it.
 //
-// Run directly (`node test.js`), through `tools/validate.sh`, or from CI.
+// Run directly (`node --test test/`), through `tools/validate.sh`, or from CI.
 
 const assert = require('node:assert/strict');
-const { looksLikeHtml, driveFile, withBase, pickSource } = require('./sources.js');
-
-let checks = 0;
-const check = (name, fn) => { fn(); checks++; console.log(`  ok ${name}`); };
+const { test: check } = require('node:test');
+const { looksLikeHtml, driveFile, withBase, pickSource } = require('../src/sources.js');
 
 const PAGE = '<!doctype html><title>t</title><p>hi</p>';
 
@@ -74,5 +72,3 @@ check('the context menu renders any selection, and only the selection', () => {
   assert.deepEqual(pickSource({ selection: '<img src=x>' }, { selectionOnly: true }), { html: '<img src=x>' });
   assert.equal(pickSource({ url: 'https://drive.google.com/file/d/abc/view', selection: ' ' }, { selectionOnly: true }), null);
 });
-
-console.log(`${checks} checks passed`);

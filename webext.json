@@ -1,11 +1,26 @@
 {
   "zip": "unescaped-{version}.zip",
-  "files": ["manifest.json", "background.js", "sources.js", "viewer.html", "viewer.js", "sandbox.html", "sandbox.js", "icons", "LICENSE"],
   "hosts": ["https://drive.google.com/*", "https://drive.usercontent.google.com/*"],
-  "allow": { "network": ["viewer.js"], "html": ["sandbox.js"] },
+  "allow": {
+    "network": ["viewer.js"],
+    "html": ["sandbox.js"]
+  },
   "urls": ["^https://drive\\.google\\.com/"],
-  "assets": { "screenshots/store-icon.png": [128, 128], "screenshots/store-1.png": [1280, 800] },
+  "assets": {
+    "screenshots/store-icon.png": [128, 128],
+    "screenshots/store-1.png": [1280, 800]
+  },
   "storeIcon": "screenshots/store-icon.png",
+  "render": {
+    "icons": [
+      {"from": "meta/icon-small.svg", "sizes": [16, 32]},
+      {"from": "meta/icon.svg", "sizes": [48, 128]}
+    ],
+    "storeIcon": {"from": "meta/icon.svg", "inset": 16},
+    "pages": [
+      {"group": "shots", "from": "meta/shot-1.html", "to": "screenshots/store-1.png", "size": [1280, 800]}
+    ]
+  },
   "justify": {
     "file": "meta/store-listing.md",
     "after": "## Permission justifications",

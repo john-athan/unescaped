@@ -1,4 +1,4 @@
-<img src="icons/icon128.png" width="72" alt="Unescaped">
+<img src="src/icons/icon128.png" width="72" alt="Unescaped">
 
 # Unescaped
 
@@ -16,7 +16,7 @@ Load it from source, on Chrome 116 or newer:
 
 1. `git clone https://github.com/john-athan/unescaped`
 2. Open `chrome://extensions`, turn on **Developer mode**
-3. **Load unpacked**, and pick the repo folder
+3. **Load unpacked**, and pick the `src/` folder
 4. Pin the toolbar icon, or use <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>
 
 ## Where the HTML comes from
@@ -51,13 +51,13 @@ Drive session, or the page it came from.
 
 ```sh
 tools/validate.sh          # every check CI runs, run locally
-tools/render-assets.sh     # icons/ and the store icon, from meta/*.svg
+tools/render-assets.sh     # src/icons/ and the store icon, from meta/*.svg
 oss check unescaped        # the same thing, through the fleet tool
 oss release unescaped      # cut a release, stopping before the push
 ```
 
-`sources.js` decides what a click renders and is pure, so `test.js` runs it
-under node. No dependencies, no build step.
+`src/sources.js` decides what a click renders and is pure, so `node --test test/`
+runs it. No dependencies, no build step.
 
 ## License
 
