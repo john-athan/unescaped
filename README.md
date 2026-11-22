@@ -1,4 +1,4 @@
-<img src="src/icons/icon128.png" width="72" alt="Unescaped">
+<img src="meta/icon.svg" width="72" alt="Unescaped">
 
 # Unescaped
 
@@ -9,6 +9,8 @@ page, open a raw `.html` file, or open an HTML file in Google Drive, and press
 Drive shows an `.html` file as its source. So does a raw GitHub link, a gist,
 or a code block in a chat. Unescaped shows you the page that source describes,
 with its scripts running.
+
+![Left, an HTML file served as plain text, the way Drive and raw links show it. Right, the same file rendered as a page in a new tab.](screenshots/store-1.png)
 
 ## Install
 
