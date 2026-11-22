@@ -5,6 +5,16 @@ versions follow Semantic Versioning.
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-11-22
+
+### Changed
+- README: say what the sandbox policy really allows (inline, eval, blob: and data: scripts, nothing over the network), not 'inline scripts only'
+- Add a screenshot to the README and a social card
+- The shared render script now reads whether a page renders transparent, so it is the same file everywhere
+- One extension layout: src/ holds exactly what ships, the store zip is src/ plus LICENSE, tests live in test/, and the shared render, package and CI files replace the local copies
+- Fleet base from oss-kit: dependabot generated from the repo's kinds, runtime versions in pin files that CI reads, and what else the fleet now requires here (licence, check script, Info.plist as version source)
+- GitHub Pages serves docs/ straight from main; the deploy workflow that did only that goes
+
 ## [0.1.2] - 2026-11-16
 
 ### Changed
