@@ -37,8 +37,9 @@ selection as HTML**, which renders it whether or not it looks like HTML.
 ## What it does not do
 
 - **No scripts from other servers.** The page runs in a sandboxed frame whose
-  policy allows inline scripts only, so `<script src="https://cdn...">` is
-  blocked. Images and stylesheets from anywhere load.
+  policy allows inline scripts, `eval`, and `blob:` or `data:` URLs, but no
+  script over the network, so `<script src="https://cdn...">` is blocked.
+  Images and stylesheets from anywhere load.
 - **No files next to a Drive file.** A Drive file has no folder URL its
   relative links could resolve against.
 - **No `chrome://` pages or the Web Store**, which no extension may read. Local
